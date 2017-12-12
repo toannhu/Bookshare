@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../Public/css/CategoriesPage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+        crossorigin="anonymous">
+    <!-- or -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src="../../Public/js/SpecifiedBook.js"></script>
+</head>
+
+<body class="body">
+    <div class="container-fluid all">
+
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand mr-auto " style="color:yellow" href="./Homepage.html">
+                <h3>NOW READ</h3>
+            </a>
+            <div id="session">
+                <div class="nav-item ">
+                    <a class="nav-link headerSelect" href="../Login/login.php">Login</a>
+                </div>
+                <div class="nav-item ">
+                    <a class="nav-link headerSelect" href="../Login/register.php">Register</a>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark content">
+            <a class="navbar-brand" href="./Homepage.html">
+                <img src="http://hkndcdn.now-do.com/static/images/phnx/index/01_SearchBar_boy.png" alt="">
+            </a>
+            <div class="titlePage ">
+                <h3>Read</h3>
+            </div>
+            <div class="input-group search mx-auto">
+                <input type="text" class="form-control search" placeholder="Search for..." aria-label="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+            </div>
+
+        </nav>
+
+        <div class="container">
+            <div class="ui breadcrumb width100">
+                <a class="section">Home</a>
+                <span class="divider">/</span>
+                <a class="section" id="genreBreadcrumb"></a>
+            </div>
+            <div class="container-fluid mainContent">
+                <div class="row ">
+                    <div class=" options col-12 col-md-12 col-lg-3">
+                        <div class="type" id="type-box">
+                            <h3>Type</h3>
+                        </div>
+                    </div>
+
+                    <div class="mainContentResult col-12 col-md-12 col-lg-9 ">
+                        <div class="container-fluid showContentResult">
+                            <div class="row" id="categories-box">
+                                <!-- for loop -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <ul>
+                    <li>
+                        <a href="#">Facebook</a>
+                        |
+
+
+                    </li>
+                    <li>
+                        <a href="#">Instagram</a>
+                        |
+                    </li>
+                    <li>
+                        <a href="#">Github</a>
+                    </li>
+                </ul>
+                <p> The product of team. Thanks for all your support</p>
+            </footer>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            var url = new URL(window.location.href);
+            var genre = url.searchParams.get("genre");
+            $(document).ready(function () {
+                $.ajax({
+                    url: "../Controllers/GetSessionHandler.php",
+                    type: "post",
+                    success: function (data) {
+                        console.log(JSON.parse(data))
+                        $("#session").empty();
+                        $("#session").append('<div class="nav-item">'
+                                + '<a class="nav-link headerSelect" href="../Login/login.php">Welcome back, <b style="color: blue;">' + JSON.parse(data)["username"] + '</b></a>'+
+                                '<a class="nav-link headerSelect" href="../Login/logout.php">Log out</a></div>');
+                    }
+                })
+
+                $.ajax({
+                    url: "../Controllers/CategoriesHandler.php",
+                    type: "post",
+                    data: {genre: genre},
+                    success: function (data) {
+                        console.log(JSON.parse(data));
+                        $('#genreBreadcrumb').html(genre)
+                        addBooks(JSON.parse(data))
+                        getGenres()
+                        // console.log(data);
+                    }
+                })
+            });
+
+            function addBooks(data) {
+                var res = '';
+
+                for (i = 0; i < data.length; i++) {
+                    res += 
+                        `<div class="col-6 col-md-4 col-lg-3">
+                            <div class="ui special cards">
+                                <div class="card">
+                                    <div class="blurring dimmable image">
+                                        <div class="ui dimmer">
+                                            <div class="content">
+                                                <div class="center">
+                                                    <div class="ui inverted button">Add Friend</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="${data[i][7]}">
+                                    </div>
+                                    <div class="content">
+                                        <a class="header" href="./SpecifiedBook.html?bookid=${data[i][0]}">${data[i][1]}</a>
+                                        <div class="meta">
+                                            <span class="date">${data[i][2]}</span>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <a href="#">
+                                            <i class="unhide icon"></i>
+                                            ${data[i][4]}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                }
+
+                $('#categories-box').html('');
+                $('#categories-box').append(res);
+            }
+
+            function getGenres() {
+                $.ajax({
+                    url: "../Controllers/CategoriesHandler.php",
+                    type: "post",
+                    data: {
+                        action: "getGenres"
+                    },
+
+                    success: function (data) {
+                        console.log(JSON.parse(data))
+                        addGenres(JSON.parse(data))
+                    }
+                })
+            }
+
+            function addGenres(data) {
+                var res = '<h3>Type</h3>';
+
+                for (i = 0; i < data.length; i++) {
+                    res +=
+                        `<div class="ui labeled button" tabindex="0">
+                            <a href="./CategoriesPage.html?genre=${data[i][1]}">
+                                <div class="ui red button">${data[i][1]}</div>
+                            </a>
+                        </div>
+                    `;
+                }
+
+                $('#type-box').html('');
+                $('#type-box').append(res)
+            }
+        </script>
+</body>
+
+</html>

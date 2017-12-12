@@ -1,0 +1,126 @@
+.content{
+    margin-top:45px;
+}
+div a.headerSelect{
+    color: yellow;
+}
+div a.headerSelect:hover{
+    color:palevioletred;
+}
+
+div .mode{
+    color:white;
+}
+
+div.search, div.search>input.form-control{
+    width: 60%;
+}
+.titlePage{
+    color: white;
+}
+
+html, .all{
+    background-color: #ECEEEB;
+    padding:0px;
+    height:100%;
+}
+.jumbotron{
+    background-color: black;
+}
+
+.height350{
+    height:350px;
+}
+div.coverImg{
+    background-color: red;
+    margin-bottom: 0px;
+}
+img.imageSpecifiedBook1
+{
+   position: relative;
+    width:261px;
+    
+    margin-top:100px;
+    margin-bottom: 0px; 
+}
+div.all div.coverImg img.imageSpecifiedBook{
+    position: relative;
+    height:348px;
+    width:261px;
+    
+    margin-top:100px;
+    margin-bottom: 0px;
+    
+}
+div.all div.coverImg div.padding150{
+    padding-left:10%;
+    display: inherit;
+}
+div.all div.contentSpecifiedBook{
+    margin-top:0px;
+    margin-left: 13%;
+    margin-right:13%;
+    width:74%;
+    background-color: white;
+}
+.overallDescrip{
+    margin-top:100px;
+    margin-left:20px;
+    width: 100%;
+}
+div.all div.container-fluid{
+    padding:0px;
+}
+.fontStyle{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:white;
+}
+.displayInlineBlock{
+    display: inherit;
+}
+.coverImg{
+    background-image: url('https://previews.123rf.com/images/issumbosi/issumbosi1509/issumbosi150900025/46065564-Stylish-colorful-orange-blue-gradient-polygonal-abstract-background-Stock-Vector.jpg');
+}
+.width100{
+    width: 100%;
+}
+.padding5{
+    padding-left:6%;
+    padding-top:4%;
+    padding-right:6%;
+    padding-bottom: 3%;
+}
+img.align-self-start{
+    max-height: 64px;
+    max-width: 64px;
+   
+}
+.media{
+    margin-top:30px;
+}
+.container{
+    padding-bottom:30px;
+}
+
+footer{
+    margin-top:30px;  
+    
+}
+
+footer {
+   margin-bottom: 30px;
+}
+
+footer ul li {
+    list-style-type: none;
+    display: inline;
+    display: inline-block;
+}
+footer ul {
+    text-align: center;
+    margin-bottom: 0px;
+}
+footer p{
+    
+    text-align: center;
+}

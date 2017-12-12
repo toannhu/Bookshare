@@ -1,0 +1,88 @@
+.content{
+    margin-top:45px;
+}
+div a.headerSelect{
+    color: yellow;
+}
+div a.headerSelect:hover{
+    color:palevioletred;
+}
+
+div .mode{
+    color:white;
+}
+
+div.search, div.search>input.form-control{
+    width: 60%;
+}
+.titlePage{
+    color: white;
+}
+h4.gernes{
+    margin-left: 50px;
+    padding:0px;
+}
+div.container .jumbotron{
+    padding:10px;
+}
+.height300{
+    height:300px;
+    padding: 10px;
+}
+.category-item p{
+    text-align: center;
+}
+
+html, .all{
+    background-color: #ECEEEB;
+    padding:0px;
+    height:100%;
+}
+div.jumbotron{
+    background-color: white;
+    border: solid 1px gray;
+}
+.carousel {
+    background-color: white;
+    
+}
+.mainContent{
+    background-color: #ECEEEB;
+}
+.mainContent{
+    margin-top:20px;
+}
+.carousel-inner{
+   height:330px;
+   
+   padding:10px;
+}
+.specifiedBook{
+   margin-bottom: 30px
+}
+footer{
+    margin-top:30px;  
+    
+}
+
+footer {
+   margin-bottom: 30px;
+}
+
+footer ul li {
+    list-style-type: none;
+    display: inline;
+    display: inline-block;
+}
+footer ul {
+    text-align: center;
+    margin-bottom: 0px;
+}
+footer p{
+    
+    text-align: center;
+}
+div.carousel div.row div#carouselExampleControls{
+    width:100%!important;
+    height:100%!important;
+}

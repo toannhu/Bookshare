@@ -1,0 +1,17 @@
+#header{
+    height: 150px;
+    background: red;
+}
+#footer{
+    height: 150px;
+    background: blue;
+}
+#content{
+    height: 150px;
+    background: yellow;
+}
+
+img{
+    width:64px;
+
+}

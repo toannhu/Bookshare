@@ -1,0 +1,94 @@
+.container-fluid{
+    padding:0px;
+}
+.content{
+    margin-top:45px;
+}
+div a.headerSelect{
+    color: yellow;
+}
+div a.headerSelect:hover{
+    color:palevioletred;
+}
+
+div .mode{
+    color:white;
+}
+
+div.search, div.search>input.form-control{
+    width: 60%;
+}
+.titlePage{
+    color: white;
+}
+
+div.all{
+    padding:0px;
+}
+div.width100{
+    width:100%;
+}
+
+div.container-fluid div.container div.breadcrumb{
+    margin-top:15px;
+    background-color: #F5F5F5;
+}
+div.options,.mainContentResult{
+    margin-top:20px;
+    border-radius: 20px;
+    background-color: white;
+    
+}
+
+
+.all, body.body, div.mainContentResult{
+    background-color:#ECEEEB;
+    
+}
+div.mainContent{
+    
+}
+div.showContentResult{
+    background-color: white;
+    height:100%;
+    border-radius: 20px;
+    padding:30px;
+}
+div.mainContentResult{
+    padding-left:10px;
+    
+}
+div.row div.special{
+    margin-bottom: 10px;
+}
+div.type{
+    margin-top:20px;
+}
+div.type div.labeled{
+    margin:10px;
+}
+div.space{
+    
+}
+footer{
+    margin-top:30px;  
+    
+}
+
+footer {
+   margin-bottom: 30px;
+}
+
+footer ul li {
+    list-style-type: none;
+    display: inline;
+    display: inline-block;
+}
+footer ul {
+    text-align: center;
+    margin-bottom: 0px;
+}
+footer p{
+    
+    text-align: center;
+}

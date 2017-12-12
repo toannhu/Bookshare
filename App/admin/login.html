@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username">
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password">
+  <input type="button" id="login" value="Login">
+
+  <script>
+    $('#login').click(function() {
+      $.ajax({
+        url: 'UserHandler.php',
+        type: "post",
+        data: {
+          action: 'login',
+          username: $('#username').val(),
+          password: $('#password').val()
+        },
+
+        success: function( data ){
+          console.log(data, typeof(data));
+          switch(data) {
+            case '3': {
+              location.href='./AdminPage.php';
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

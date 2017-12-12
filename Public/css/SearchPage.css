@@ -1,0 +1,60 @@
+.content{
+    margin-top:45px;
+}
+div a.headerSelect{
+    color: yellow;
+}
+div a.headerSelect:hover{
+    color:palevioletred;
+}
+
+div .mode{
+    color:white;
+}
+html, body.body,.all{
+    background-color: #ECEEEB;
+    padding:0px;
+    height:100%;
+}
+body.body div.all div.notFixed{
+    margin-top:80px;
+    align-content: center;
+}
+body.body div.all div.notFixed div.action{
+   width:100%;
+}
+div.notFixed h1{
+    text-align: center;
+}
+div.notFixed div.margin-top30{
+    margin-top: 30px;
+   
+}
+div.notFixed div.showResult{
+    margin-top:30px;
+    margin-bottom: 40px;
+}
+div.row div.marginTop20{
+    margin-top:20px;
+}footer{
+    margin-top:30px;  
+    
+}
+
+footer {
+   margin-bottom: 30px;
+}
+
+footer ul li {
+    list-style-type: none;
+    display: inline;
+    display: inline-block;
+}
+footer ul {
+    text-align: center;
+    margin-bottom: 0px;
+}
+footer p{
+    
+    text-align: center;
+}
